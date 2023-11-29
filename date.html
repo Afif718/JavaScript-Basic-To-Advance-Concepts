@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Date & time</title>
+</head>
+<body>
+    
+    <label for="date" id="date-time"></label><br>
+    <label for="date" id="date-time1"></label><br>
+    <label for="date" id="date-time2"></label><br>
+    <label for="date" id="date-time3"></label><br>
+    <label for="date" id="date-time4"></label><br>
+    <label for="date" id="date-time5"></label><br>
+    <label for="date" id="date-time6"></label><br>
+    <label for="date" id="date-time7"></label><br>
+
+</body>
+
+<script>
+    let date = new Date();
+    //let date = new Date(0);
+    //let date = new Date(2023,0,1,2,3,4,5);
+    //let date = new Date("January 1, 2023 00:00:00");
+
+    //year
+    let year = date.getFullYear();
+    let dayOfMonth = date.getDate();
+    let dayOfWeek = date.getDay();
+    let month = date.getMonth();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let ms = date.getMilliseconds();
+
+    // date.setFullYear(2024);
+    // date.setMonth(11);
+    // date.setDate(31);
+    // date.setHours(23);
+    // date.setMinutes(1);
+    // date.setSeconds(30);
+    // date.setMilliseconds(0);
+    
+
+
+
+    //date = date.toLocaleString();
+    document.getElementById("date-time").innerHTML = year;
+    document.getElementById("date-time1").innerHTML = dayOfMonth;
+    document.getElementById("date-time2").innerHTML = dayOfWeek + " Means Monday";
+    document.getElementById("date-time3").innerHTML = month+ " means Nov bcoz it starts from 0";
+    document.getElementById("date-time4").innerHTML = minutes;
+    document.getElementById("date-time5").innerHTML = seconds;
+    document.getElementById("date-time6").innerHTML = ms;
+   
+    
+    console.log(formatTime(date));
+
+    function formatTime(date){
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let amOrPm = hours >= 12 ? "pm" : "am";
+
+    //convert military hours to standard
+    hours = (hours % 12) || 12;
+
+    return `${hours}:${minutes}:${seconds}:${amOrPm}`;
+}
+
+let time = formatTime(date);
+
+document.getElementById("date-time6").innerHTML =time;
+</script>
+</html>

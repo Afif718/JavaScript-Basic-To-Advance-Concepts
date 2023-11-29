@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Module</title>
+</head>
+<body>
+
+    <script type="module">
+        //one way
+        //import{PI, getCircumference, getArea} from "./math_util.js";
+        //another way
+        import * as MathUtil from "./math_util.js"
+        
+        console.log(MathUtil.PI);
+        console.log(MathUtil.getCircumference(4));
+        console.log(MathUtil.getArea(2));
+    </script>
+    
+</body>
+</html>

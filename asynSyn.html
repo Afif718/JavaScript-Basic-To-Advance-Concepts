@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Synchronous</title>
+</head>
+<body>
+    
+
+    <script>
+        //synchronous code = In an ordered sequence.
+        //              Step-by-step linear instructions
+        //              (start now, finish now)
+        console.log("START");
+        console.log("This step is synchronous");
+        console.log("END");
+
+        //asynchronous code = out of sequence.
+        //                  Ex. Access a database
+        //                  Fetch a file
+        //                  Tasks that take time
+        //                  (start now. finish sometime later)
+
+        console.log("START");
+        setTimeout(() => console.log("This step is asynchronous"), 3000);
+        console.log("END");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+   <label for="clock" id="myClock"></label> 
+
+   <script>
+    const myLabel = document.getElementById("myClock");
+
+    updateTime();
+
+    setInterval(updateTime, 1000);
+
+    function updateTime(){
+
+        let date = new Date();
+
+
+        function hourMinsSecs(date){
+            let hour = date.getHours();
+            let mins = date.getMinutes();
+            let secs = date.getSeconds();
+            let amOrPm = hour>= 12 ? "PM": "AM";
+
+            hour = (hour%12)||12;
+
+            return `${hour}:${mins}:${secs} ${amOrPm}`;
+        }
+
+        myLabel.innerHTML = hourMinsSecs(date);
+    }
+   </script>
+</body>
+</html>

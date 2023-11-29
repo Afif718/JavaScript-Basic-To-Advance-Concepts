@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Time Out</title>
+</head>
+<body>
+
+    <button id="myBtn">Click Me</button>
+    <label for="show message" id="message"></label>
+    
+    <script>
+        document.getElementById("myBtn").onclick = function (){
+         
+            setTimeout(showMessage, 3000);
+            function showMessage(){
+                document.getElementById("message").innerHTML = "Showing message after 3 seconds";
+            }
+        }
+    </script>
+</body>
+</html>

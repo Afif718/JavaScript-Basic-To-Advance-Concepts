@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Await Function</title>
+
+      <script>
+        //await = makes an async function wait for a promise
+        async function loadFile(){
+            let fileLoaded = false;
+
+            if(fileLoaded){
+                return "File Loaded";
+            } else{
+                throw "File Not Loaded!!";
+            }
+        }
+
+        async function startProcess(){
+            try{
+                let message = await loadFile();
+                console.log(message);
+            }catch(error){
+                console.log(error);
+            }
+            
+        }
+        startProcess();
+
+        //loadFile().then(value=> console.log(value)).catch(error => console.log(error));
+
+    </script>
+</head>
+<body>
+  
+    
+</body>
+</html>

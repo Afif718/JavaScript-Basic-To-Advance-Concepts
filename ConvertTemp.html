@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Temperature</title>
+</head>
+<body>
+
+    <h1>Convert Temperature</h1><br>
+    <label for="Temperature">Enter the Temp here</label>
+    <input type="number" id="inNum"><br>
+
+
+    <label for="celcius">Celcius</label>
+    <input type="radio" name="Temp"  id="celcius"><br>
+
+    <label for="fahrenheit">Fahrenheit</label>
+    <input type="radio" name="Temp"  id="fahrenheit"><br><br>
+
+    <input type="submit" id="convertBTN"><br><br>
+
+    <label for="result" id="pntResult"></label>
+
+    <script>
+        document.getElementById("convertBTN").onclick = function (){
+            let temp = document.getElementById("inNum").value;
+            let celcius = document.getElementById("celcius");
+            let fahrenheit = document.getElementById("fahrenheit");
+            //let result = document.getElementById("result").vaule = 0;
+
+            if(celcius.checked){
+                let cel = (temp - 32) * (5/9);
+                document.getElementById("pntResult").innerHTML ="Celcius is "+cel + "°C";
+            }else if(fahrenheit.checked){
+                let ferhen = temp*9/5+32;
+                document.getElementById("pntResult").innerHTML = "Fahrenheit is "+ferhen + "°F";
+            }else{
+                document.getElementById("pntResult").innerHTML = "Select a Unit";
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
