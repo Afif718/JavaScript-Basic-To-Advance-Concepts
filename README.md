@@ -1,2 +1,2 @@
 # JavaScript-Refresh
-Here all Javascript concepts (basic to advanced) are discussed with examples. 
+Here all Javascript concepts (basic to advance) are discussed with examples. 
